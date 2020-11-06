@@ -1,13 +1,29 @@
 import React from 'react';
-import GlobalStyle from 'theme/GlobalStyle';
+import GlobalStyle from 'utils/GlobalStyle';
+import Navigation from 'components/Navigation/Navigation';
 
-import First from 'components/First';
+import { ThemeProvider } from 'styled-components';
+import mainTheme from 'utils/mainTheme';
+
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Desktop from 'components/Desktop/Desktop';
+import Finance from 'components/Finance/Finance';
 
 const Root = () => (
   <>
     <GlobalStyle />
 
-    <First />
+    <ThemeProvider theme={mainTheme}>
+      <BrowserRouter>
+        <Navigation />
+
+        <Switch>
+          <Route exact path="/" component={Desktop} />
+          <Route path="/finance" component={Finance} />
+        </Switch>
+      </BrowserRouter>
+    </ThemeProvider>
   </>
 );
 
