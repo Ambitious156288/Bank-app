@@ -11,15 +11,19 @@ import { NavLink } from 'react-router-dom';
 
 import styled from 'styled-components';
 
+import ChangeLanguageButtons from './ChangeLanguageButtons';
+
 const StyledCenter = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    maxWidth: 500,
+    maxWidth: 600,
+    margin: 20,
   },
 });
 
@@ -32,34 +36,37 @@ const Navigation = () => {
   };
 
   return (
-    <StyledCenter>
-      <Paper className={classes.root} elevation={15}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          variant="fullWidth"
-          indicatorColor="secondary"
-          textColor="secondary"
-        >
-          <Tab
-            style={{ fontSize: 17 }}
-            icon={<DesktopMacIcon />}
-            label="Desktop"
-            value="/"
-            component={NavLink}
-            to="/"
-          />
-          <Tab
-            style={{ fontSize: 17 }}
-            icon={<EuroIcon />}
-            label="Finance"
-            value="/finance"
-            component={NavLink}
-            to="/finance"
-          />
-        </Tabs>
-      </Paper>
-    </StyledCenter>
+    <>
+      <StyledCenter>
+        <Paper className={classes.root} elevation={15}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            variant="fullWidth"
+            indicatorColor="secondary"
+            textColor="secondary"
+          >
+            <Tab
+              style={{ fontSize: 17 }}
+              icon={<DesktopMacIcon />}
+              label="Desktop"
+              value="/"
+              component={NavLink}
+              to="/"
+            />
+            <Tab
+              style={{ fontSize: 17 }}
+              icon={<EuroIcon />}
+              label="Finance"
+              value="/finance"
+              component={NavLink}
+              to="/finance"
+            />
+          </Tabs>
+        </Paper>
+        <ChangeLanguageButtons arg1="pl/ang" />
+      </StyledCenter>
+    </>
   );
 };
 
