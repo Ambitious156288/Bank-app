@@ -7,8 +7,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // have a look at the Quick start guide
 // for passing in lng and translations on init
 
-const token = '06f4586cef6d5080cc60818cd70b197b';
-const id = '387501';
+const token = process.env.REACT_APP_I18_TOKEN;
+const id = process.env.REACT_APP_I18_ID;
 
 i18n
   // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
