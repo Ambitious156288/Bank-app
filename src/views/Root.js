@@ -1,7 +1,6 @@
 /* eslint-disable import/first */
 import React from 'react';
 import GlobalStyle from 'utils/GlobalStyle';
-// import Navigation from 'components/Navigation/Navigation';
 
 const Navigation = React.lazy(() => import('../components/Navigation/Navigation'));
 
