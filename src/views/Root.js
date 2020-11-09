@@ -1,8 +1,5 @@
-/* eslint-disable import/first */
 import React from 'react';
 import GlobalStyle from 'utils/GlobalStyle';
-
-const Navigation = React.lazy(() => import('../components/Navigation/Navigation'));
 
 import { ThemeProvider } from 'styled-components';
 import mainTheme from 'utils/mainTheme';
@@ -15,6 +12,8 @@ import Finance from 'components/Finance/Finance';
 // import { useTranslation } from 'react-i18next';
 
 import Spinner from 'components/Spinners/Spinner';
+
+const Navigation = React.lazy(() => import('../components/Navigation/Navigation'));
 
 const Root = () => {
   // const { t, i18n } = useTranslation();
