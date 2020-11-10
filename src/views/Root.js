@@ -9,24 +9,19 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Desktop from 'components/Desktop/Desktop';
 import Finance from 'components/Finance/Finance';
 
+import Navigation from 'components/Navigation/Navigation';
+
 // import { useTranslation } from 'react-i18next';
 
-import Spinner from 'components/Spinners/Spinner';
-
-const Navigation = React.lazy(() => import('../components/Navigation/Navigation'));
-
 const Root = () => {
-  // const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();aa
 
   return (
     <>
-      {/* <Spinner /> */}
       <GlobalStyle />
       <ThemeProvider theme={mainTheme}>
         <BrowserRouter>
-          <React.Suspense fallback={<Spinner />}>
-            <Navigation />
-          </React.Suspense>
+          <Navigation />
 
           <Switch>
             <Route exact path="/" component={Desktop} />

@@ -11,13 +11,8 @@ import { NavLink } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import ChangeLanguageButtons from './ChangeLanguageButtons';
-
-const StyledCenter = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import { useTranslation } from 'react-i18next';
+// import ChangeLanguageButtons from './ChangeLanguageButtons';
 
 const useStyles = makeStyles({
   root: {
@@ -27,6 +22,12 @@ const useStyles = makeStyles({
   },
 });
 
+const StyledCenter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Navigation = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -34,6 +35,8 @@ const Navigation = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const { t, i18n } = useTranslation();
 
   return (
     <>
@@ -49,7 +52,7 @@ const Navigation = () => {
             <Tab
               style={{ fontSize: 17 }}
               icon={<DesktopMacIcon />}
-              label="Desktop"
+              label={t('Desktop')}
               value="/"
               component={NavLink}
               to="/"
@@ -57,14 +60,26 @@ const Navigation = () => {
             <Tab
               style={{ fontSize: 17 }}
               icon={<EuroIcon />}
-              label="Finance"
+              label={t('Finance')}
               value="/finance"
               component={NavLink}
               to="/finance"
             />
           </Tabs>
         </Paper>
-        <ChangeLanguageButtons arg1="pl/ang" />
+        {/* <ChangeLanguageButtons
+          language1="pl"
+          language2="en"
+          onClick1={() => i18n.changeLanguage('pl')}
+          onClick2={() => i18n.changeLanguage('en')}
+        /> */}
+        <h1>{t('aaa')}</h1>
+        <button type="submit" onClick1={() => i18n.changeLanguage('pl')}>
+          pl
+        </button>
+        <button type="submit" onClick2={() => i18n.changeLanguage('en')}>
+          en
+        </button>
       </StyledCenter>
     </>
   );
