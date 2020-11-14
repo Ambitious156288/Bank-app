@@ -29,11 +29,6 @@ const StyledCenter = styled.div`
   align-items: center;
 `;
 
-// do function like this
-// const changeLanguage = lng => {
-//   i18n.changeLanguage(lng);
-// };
-
 const Navigation = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -43,6 +38,10 @@ const Navigation = () => {
   };
 
   const { t, i18n } = useTranslation();
+
+  const changeLanguage = language => {
+    i18n.changeLanguage(language);
+  };
 
   return (
     <>
@@ -79,9 +78,8 @@ const Navigation = () => {
           onClick1={() => i18n.changeLanguage('pl')}
           onClick2={() => i18n.changeLanguage('en')}
         /> */}
-        <h1>{t('law')}</h1>
-        <button onClick={() => i18n.changeLanguage('pl')}>pl</button>
-        <button onClick={() => i18n.changeLanguage('en')}>en</button>
+        <button onClick={() => changeLanguage('pl')}>pl</button>
+        <button onClick={() => changeLanguage('en')}>en</button>
       </StyledCenter>
     </>
   );
