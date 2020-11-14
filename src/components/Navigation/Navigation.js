@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
@@ -27,6 +28,11 @@ const StyledCenter = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+// do function like this
+// const changeLanguage = lng => {
+//   i18n.changeLanguage(lng);
+// };
 
 const Navigation = () => {
   const classes = useStyles();
@@ -73,13 +79,9 @@ const Navigation = () => {
           onClick1={() => i18n.changeLanguage('pl')}
           onClick2={() => i18n.changeLanguage('en')}
         /> */}
-        <h1>{t('aaa')}</h1>
-        <button type="submit" onClick1={() => i18n.changeLanguage('pl')}>
-          pl
-        </button>
-        <button type="submit" onClick2={() => i18n.changeLanguage('en')}>
-          en
-        </button>
+        <h1>{t('law')}</h1>
+        <button onClick={() => i18n.changeLanguage('pl')}>pl</button>
+        <button onClick={() => i18n.changeLanguage('en')}>en</button>
       </StyledCenter>
     </>
   );
