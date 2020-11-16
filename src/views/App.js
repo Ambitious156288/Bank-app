@@ -1,5 +1,5 @@
 import React from 'react';
-import Spinner from 'components/Spinners/Spinner';
+import Spinner from 'components/atoms/Spinners/Spinner';
 
 const Root = React.lazy(() => import('./Root'));
 
