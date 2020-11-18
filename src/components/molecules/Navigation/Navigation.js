@@ -11,6 +11,8 @@ import { NavLink } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
 
+import SnackbarAlert from 'components/atoms/SnackbarAlert/SnackbarAlert';
+
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
@@ -75,6 +77,8 @@ const Navigation = ({ items = [] }) => {
         en
       </button>
       {/* </StyledCenter> */}
+
+      <SnackbarAlert />
     </>
   );
 };
