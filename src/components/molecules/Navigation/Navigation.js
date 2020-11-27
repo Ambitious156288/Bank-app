@@ -78,7 +78,10 @@ const Navigation = ({ items = [] }) => {
       </button>
       {/* </StyledCenter> */}
 
-      <SnackbarAlert />
+      <SnackbarAlert
+        textUp="Uważaj! Przestępcy podszywają się pod pracowników infolinii."
+        textBottom="Oszuści próbują podszywać się pod pracowników infolinii lub działu bezpieczeństwa banku."
+      />
     </>
   );
 };
