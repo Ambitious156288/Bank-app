@@ -13,6 +13,8 @@ import { useTranslation } from 'react-i18next';
 
 import SnackbarAlert from 'components/atoms/SnackbarAlert/SnackbarAlert';
 
+import LanguageDropdown from 'components/molecules/ChangeLanguageButton/LanguageDropdown';
+
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
@@ -77,11 +79,12 @@ const Navigation = ({ items = [] }) => {
         en
       </button>
       {/* </StyledCenter> */}
-
       <SnackbarAlert
         textUp="Uważaj! Przestępcy podszywają się pod pracowników infolinii."
         textBottom="Oszuści próbują podszywać się pod pracowników infolinii lub działu bezpieczeństwa banku."
       />
+
+      <LanguageDropdown />
     </>
   );
 };
