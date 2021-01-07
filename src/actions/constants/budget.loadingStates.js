@@ -1,0 +1,8 @@
+const LOADING_STATES = {
+  INITIAL: 'INITIAL',
+  LOADED: 'LOADED',
+  LOADING: 'LOADING',
+  FAILED: 'FAILED',
+};
+
+export default LOADING_STATES;
