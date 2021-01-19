@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GlobalStyle from 'theme/GlobalStyle';
 
 import { ThemeProvider } from 'styled-components';
@@ -18,8 +18,17 @@ import EuroIcon from '@material-ui/icons/Euro';
 
 // import { useTranslation } from 'react-i18next';
 
-const Root = () => {
+// import { fetchBudget } from 'actions/budget.action';
+
+// eslint-disable-next-line react/prop-types
+const Root = ({ fetchBudget }) => {
   // const { t, i18n } = useTranslation();aa
+
+  useEffect(() => {
+    fetchBudget(1);
+  }, [fetchBudget]);
+
+  // console.log(budget);
 
   return (
     <>
