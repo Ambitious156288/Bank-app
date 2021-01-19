@@ -1,5 +1,11 @@
-// add routes and export this
+const routes = {
+  desktop: '/',
+  payments: '/payments',
+  finance: '/finance',
+  help: '/help',
 
-// export const routes = {
-//   home: '/',
-// };
+  login: '/login',
+  register: '/register',
+};
+
+export default routes;

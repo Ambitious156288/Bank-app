@@ -56,6 +56,7 @@ const Navigation = ({ items = [] }) => {
         >
           {items.map(item => (
             <Tab
+              key={item.content}
               style={{ fontSize: 17 }}
               icon={item.icon}
               label={t(item.content)}
@@ -90,7 +91,8 @@ const Navigation = ({ items = [] }) => {
 };
 
 Navigation.propTypes = {
-  items: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.any]))
+    .isRequired,
 };
 
 export default Navigation;

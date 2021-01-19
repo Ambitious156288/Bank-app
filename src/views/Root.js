@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import GlobalStyle from 'theme/GlobalStyle';
 
 import { ThemeProvider } from 'styled-components';
@@ -6,29 +6,22 @@ import mainTheme from 'theme/mainTheme';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Desktop from 'pages/Desktop/Desktop';
-import Payments from 'pages/Payments/Payments';
-import Finance from 'pages/Finance/Finance';
-import Help from 'pages/Help/Help';
+import Desktop from 'views/Desktop';
+import Payments from 'views/Payments';
+import Finance from 'views/Finance';
+import Help from 'views/Help';
 
 import Navigation from 'components/molecules/Navigation/Navigation';
 
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';
 import EuroIcon from '@material-ui/icons/Euro';
 
+import routes from 'routes';
+
 // import { useTranslation } from 'react-i18next';
 
-// import { fetchBudget } from 'actions/budget.action';
-
-// eslint-disable-next-line react/prop-types
-const Root = ({ fetchBudget }) => {
+const Root = () => {
   // const { t, i18n } = useTranslation();aa
-
-  useEffect(() => {
-    fetchBudget(1);
-  }, [fetchBudget]);
-
-  // console.log(budget);
 
   return (
     <>
@@ -37,18 +30,18 @@ const Root = ({ fetchBudget }) => {
         <BrowserRouter>
           <Navigation
             items={[
-              { content: 'Desktop', to: '/', icon: <DesktopMacIcon /> },
-              { content: 'Payments', to: '/payments', icon: <EuroIcon /> },
-              { content: 'Finance', to: '/finance', icon: <EuroIcon /> },
-              { content: 'Help', to: '/help', icon: <EuroIcon /> },
+              { content: 'Desktop', to: routes.desktop, icon: <DesktopMacIcon /> },
+              { content: 'Payments', to: routes.payments, icon: <EuroIcon /> },
+              { content: 'Finance', to: routes.finance, icon: <EuroIcon /> },
+              { content: 'Help', to: routes.help, icon: <EuroIcon /> },
             ]}
           />
 
           <Switch>
-            <Route exact path="/" component={Desktop} />
-            <Route path="/payments" component={Payments} />
-            <Route path="/finance" component={Finance} />
-            <Route path="/help" component={Help} />
+            <Route exact path={routes.desktop} component={Desktop} />
+            <Route path={routes.payments} component={Payments} />
+            <Route path={routes.finance} component={Finance} />
+            <Route path={routes.help} component={Help} />
           </Switch>
         </BrowserRouter>
       </ThemeProvider>
